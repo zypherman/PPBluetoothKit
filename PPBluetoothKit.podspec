@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "PPBluetoothKit"
-  spec.version      = "1.2.1"
+  spec.version      = "1.2.2"
   spec.summary      = "A short description of PPBluetoothKit."
 
   # This description is used to generate tags and improve search results.
@@ -139,6 +139,7 @@ Pod::Spec.new do |spec|
   spec.pod_target_xcconfig = { 'VALID_ARCHS[sdk=iphonesimulator*]' => '' }
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+
+  spec.dependency "PPBaseKit", "~> 1.2.1"
 
 end
