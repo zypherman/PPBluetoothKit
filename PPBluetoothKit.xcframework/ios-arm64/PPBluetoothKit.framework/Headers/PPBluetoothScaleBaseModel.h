@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isOverload; // 是否超载
 @property (nonatomic, assign) BOOL isPlus; // 是否是正数
 
+@property (nonatomic, assign) NSInteger impedance100EnCode; // 100kHz密文阻抗(4电极双频)
+
 @property (nonatomic, copy) NSString *dateStr; // formate yyyy-MM-dd HH:mm:ss
 
 @property (nonatomic, assign, readonly) double dateTimeInterval; // dataStr since1970的时间戳

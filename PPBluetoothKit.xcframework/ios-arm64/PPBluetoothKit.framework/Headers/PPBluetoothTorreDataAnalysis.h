@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PPBluetoothTorreDataAnalysis : NSObject
 
-+ (PPBluetoothScaleBaseModel *)analysisData:(NSData *)receiveDate;
++ (PPBluetoothScaleBaseModel *)analysisData:(NSData *)receiveDate device:( PPBluetoothAdvDeviceModel *)deviceAdv;
 
-+ (NSArray <PPBluetoothScaleBaseModel *>*)torreHistoryWithData:(NSData *)data;
++ (NSArray <PPBluetoothScaleBaseModel *>*)torreHistoryWithData:(NSData *)reciveData device:( PPBluetoothAdvDeviceModel *)deviceAdv;
 @end
 
 NS_ASSUME_NONNULL_END

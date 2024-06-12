@@ -28,9 +28,17 @@
 		<data>
 		wcowGavlW5XZ7IZlDGm6W6VU7wU=
 		</data>
+		<key>Headers/PPBluetoothBorreDataAnalysis.h</key>
+		<data>
+		sJLi8wn6rN2nVLbmSxXSoV8KpbQ=
+		</data>
 		<key>Headers/PPBluetoothCMDApple.h</key>
 		<data>
 		2dmqjlZL6k437sk4cfw5AznPKdE=
+		</data>
+		<key>Headers/PPBluetoothCMDBorre.h</key>
+		<data>
+		6nNM0gArZtHBwJTa/8sOcAUk+gA=
 		</data>
 		<key>Headers/PPBluetoothCMDCoconut.h</key>
 		<data>
@@ -116,6 +124,10 @@
 		<data>
 		xDxKQFLVrpUIR/v/nMVpSiwFnrI=
 		</data>
+		<key>Headers/PPBluetoothPeripheralBorre.h</key>
+		<data>
+		UjIvP1ZvgZxvtjqyi/7Ijmfhkgw=
+		</data>
 		<key>Headers/PPBluetoothPeripheralCoconut.h</key>
 		<data>
 		gopafM1z0I2ceS5XhDnk2/F4vAE=
@@ -154,7 +166,7 @@
 		</data>
 		<key>Headers/PPBluetoothPeripheralTorre.h</key>
 		<data>
-		eNT5+57jFf3NJWKORNslArKXYYE=
+		QUrprRPLWNcniVUWKk/o3slqPj0=
 		</data>
 		<key>Headers/PPBluetoothPrivacyManager.h</key>
 		<data>
@@ -162,11 +174,11 @@
 		</data>
 		<key>Headers/PPBluetoothScaleBaseModel.h</key>
 		<data>
-		Td9X0ct0AoBY0IZcdOJsJMyyw6k=
+		rgFyNM0bfB6Vl4L2yoPGiKnfZc4=
 		</data>
 		<key>Headers/PPBluetoothTorreDataAnalysis.h</key>
 		<data>
-		c09mw2aiFAKtSJYrbn7dkdBrSCI=
+		YMxnZlBYRcpa9frYCsR3LjZAj6c=
 		</data>
 		<key>Headers/PPScaleFilter.h</key>
 		<data>
@@ -195,6 +207,10 @@
 		<key>Headers/PPUnitTool.h</key>
 		<data>
 		/yTX613QB4ah5u7fTlI4AG9Sq9Y=
+		</data>
+		<key>Headers/PPUserRecentBodyData.h</key>
+		<data>
+		pW4a24V1f5amcNNhCUlo8WOdPe0=
 		</data>
 		<key>Headers/PPWifiInfoModel.h</key>
 		<data>
@@ -277,6 +293,17 @@
 			zZCtYzZRciMYjnPS8lGVcWrGJOezmy3BCDUlUlumJS4=
 			</data>
 		</dict>
+		<key>Headers/PPBluetoothBorreDataAnalysis.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sJLi8wn6rN2nVLbmSxXSoV8KpbQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			rRMgcZeXvvkMcR4zamuAUftiFjiAK+uRfP1QOI7PCig=
+			</data>
+		</dict>
 		<key>Headers/PPBluetoothCMDApple.h</key>
 		<dict>
 			<key>hash</key>
@@ -286,6 +313,17 @@
 			<key>hash2</key>
 			<data>
 			IvJvzyHOhyLBTKNOtgsK2QZ3AaBSGEmRsM9SQfD/Ygg=
+			</data>
+		</dict>
+		<key>Headers/PPBluetoothCMDBorre.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6nNM0gArZtHBwJTa/8sOcAUk+gA=
+			</data>
+			<key>hash2</key>
+			<data>
+			4/2MHWvkWCMTPR2+wnuXBT38rxL5JvL7QvvdKl//zjI=
 			</data>
 		</dict>
 		<key>Headers/PPBluetoothCMDCoconut.h</key>
@@ -519,6 +557,17 @@
 			qgajJkWc2nvW84EdEG8nj5+XIS5RdxYUEcOmmdwvYPY=
 			</data>
 		</dict>
+		<key>Headers/PPBluetoothPeripheralBorre.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UjIvP1ZvgZxvtjqyi/7Ijmfhkgw=
+			</data>
+			<key>hash2</key>
+			<data>
+			YzrboQ2Bh1lgI1OO549pODSKDIisdB/F9aQrqK9+ypo=
+			</data>
+		</dict>
 		<key>Headers/PPBluetoothPeripheralCoconut.h</key>
 		<dict>
 			<key>hash</key>
@@ -622,11 +671,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eNT5+57jFf3NJWKORNslArKXYYE=
+			QUrprRPLWNcniVUWKk/o3slqPj0=
 			</data>
 			<key>hash2</key>
 			<data>
-			hvzE1tQdPll/qRIuogy6vbbGwne7HkOGHP5Te+madvw=
+			Xuybb/l/vfxGPmzNlha4D/RYkkZuPGPL3wTaaFYrSmg=
 			</data>
 		</dict>
 		<key>Headers/PPBluetoothPrivacyManager.h</key>
@@ -644,22 +693,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Td9X0ct0AoBY0IZcdOJsJMyyw6k=
+			rgFyNM0bfB6Vl4L2yoPGiKnfZc4=
 			</data>
 			<key>hash2</key>
 			<data>
-			8Qt9qzD2A4AEYLHwl8OGQh0uIu8YX/EJt+MuMywoUn0=
+			jeOjTmLhPcri06V0DJEjQN76ViIPQ6/8kMhsuvZGmoY=
 			</data>
 		</dict>
 		<key>Headers/PPBluetoothTorreDataAnalysis.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c09mw2aiFAKtSJYrbn7dkdBrSCI=
+			YMxnZlBYRcpa9frYCsR3LjZAj6c=
 			</data>
 			<key>hash2</key>
 			<data>
-			f0x2mMFkfH0jkCixSkrTPUEiauxEF9e08ut8QWIIu+c=
+			iYc9bzIyCnpDxMKUNV6efmYAJcHuOMN585GHLemzyG8=
 			</data>
 		</dict>
 		<key>Headers/PPScaleFilter.h</key>
@@ -737,6 +786,17 @@
 			<key>hash2</key>
 			<data>
 			MdQUitqby1D5A3LXMdvbaPD1/UlSzcs0wlWGu2qB2vo=
+			</data>
+		</dict>
+		<key>Headers/PPUserRecentBodyData.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			pW4a24V1f5amcNNhCUlo8WOdPe0=
+			</data>
+			<key>hash2</key>
+			<data>
+			P/WGgu/mkiXKv66NW025BYiqjHgUdF+j64XE7igFLAE=
 			</data>
 		</dict>
 		<key>Headers/PPWifiInfoModel.h</key>
