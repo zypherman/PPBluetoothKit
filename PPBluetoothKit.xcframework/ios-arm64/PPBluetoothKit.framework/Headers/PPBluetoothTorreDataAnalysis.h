@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "PPBluetoothAdvDeviceModel.h"
 #import "PPBluetoothScaleBaseModel.h"
+#import "PPBatteryInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (PPBluetoothScaleBaseModel *)analysisData:(NSData *)receiveDate device:( PPBluetoothAdvDeviceModel *)deviceAdv;
 
 + (NSArray <PPBluetoothScaleBaseModel *>*)torreHistoryWithData:(NSData *)reciveData device:( PPBluetoothAdvDeviceModel *)deviceAdv;
+
++ (PPBatteryInfoModel *)analysisStrengthWithData:(NSData *)receiveData;
 @end
 
 NS_ASSUME_NONNULL_END

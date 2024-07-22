@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSDictionary *)weightStrWithGFloat:(CGFloat)g accuracyType:(PPDeviceAccuracyType)accuracyType andUnit:(PPDeviceUnit)unitType deviceName:(NSString *)deviceName;
 
-// 计算新方法
+// 计算新方法（0.1g精度的需放大10倍传进来）
 + (NSDictionary *)weightStrNewWithGFloat:(CGFloat)g accuracyType:(PPDeviceAccuracyType)accuracyType andUnit:(PPDeviceUnit)unitType deviceName:(NSString *)deviceName;
 
 

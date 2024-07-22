@@ -91,6 +91,8 @@
 
 - (void)monitorProcessData:(PPBluetoothScaleBaseModel *)model advModel:(PPBluetoothAdvDeviceModel*)advModel;
 
+- (void)monitorBatteryInfoChange:(PPBatteryInfoModel *)model advModel:(PPBluetoothAdvDeviceModel*)advModel;
+
 @end
 
 @protocol PPBluetoothFoodScaleDataDelegate <NSObject>

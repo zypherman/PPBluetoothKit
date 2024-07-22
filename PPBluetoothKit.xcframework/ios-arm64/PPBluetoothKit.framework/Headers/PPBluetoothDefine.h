@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, PPDeviceConnectType) {
     PPDeviceConnectTypeUnknow = 0, // 未知
     PPDeviceConnectTypeBleAdv, // 蓝牙广播秤
     PPDeviceConnectTypeBleConnect, // 蓝牙连接秤
+    PPDeviceConnectTypeLTE, // 4G-LTE
 };
 
 // 设备类型
@@ -139,7 +140,9 @@ typedef NS_ENUM(NSUInteger, PPDevicePeripheralType) {
     //ice //CF597 /连接 /人体秤
     PPDevicePeripheralTypePeripheralIce,
     // Jambul 3.x /广播 /人体秤
-    PPDevicePeripheralTypePeripheralJambul
+    PPDevicePeripheralTypePeripheralJambul,
+    // 4G LET设备
+    PPDevicePeripheralTypePeripheralKiwifruit
 };
 
 #endif /* PPBluetoothDefine_h */

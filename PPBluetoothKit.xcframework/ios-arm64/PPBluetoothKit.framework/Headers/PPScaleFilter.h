@@ -38,8 +38,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)signByAdvData:(NSData *)advData andMacAddressStart:(NSInteger )macAddressStart;
 
-//算法差异拼接版本号
-+ (NSInteger )torreCalcuteDiffByAdvData:(NSData *)advData;
+
+/// torre 广播标记位
++ (NSString *)torreEquipmentLabelingByAdvData:(NSData *)advData;
+
+/// ice 广播标记位
++ (NSString *)iceEquipmentLabelingByAdvData:(NSData *)advData;
+
 
 @end
 

@@ -35,6 +35,9 @@ typedef NS_ENUM(NSUInteger, PPBluetoothAppleWifiConfigState) {
 
 @property (nonatomic, strong) CBPeripheral *peripheral;
 
+@property (nonatomic, strong) PPBatteryInfoModel *batteryInfo;
+
+
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral  andDevice:(PPBluetoothAdvDeviceModel *)device;
 
 - (void)discoverDeviceInfoService:(void(^)(PPBluetooth180ADeviceModel *deviceModel))deviceInfoResponseHandler;
@@ -46,6 +49,8 @@ typedef NS_ENUM(NSUInteger, PPBluetoothAppleWifiConfigState) {
 - (void)deleteDeviceHistoryData;
 
 - (void)syncDeviceTime;
+
+- (void)fetchDeviceBatteryInfo;
 
 - (void)syncDeviceSetting:(PPBluetoothDeviceSettingModel *)settingModel;
 

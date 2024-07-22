@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PPBluetoothAdvDeviceModel *deviceAdv;
 
+@property (nonatomic, strong) PPBatteryInfoModel *batteryInfo;
+
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral  andDevice:(PPBluetoothAdvDeviceModel *)device;
 
 - (void)discoverDeviceInfoService:(void(^)(PPBluetooth180ADeviceModel *deviceModel))deviceInfoResponseHandler;
@@ -334,6 +336,9 @@ transferContinueStatus:(NSInteger)transferContinueStatus
 /// - Parameter status: 0成功 1失败
 /// - Parameter language: 设备语言
 - (void)getLanguageWithCompletion:(void(^)(NSInteger status, PPTorreLanguage language))completion;
+
+/// 获取电量
+- (void)fetchDeviceBatteryInfoWithCompletion:(void(^)(PPBatteryInfoModel *batteryInfo))completion;
 
 @end
 

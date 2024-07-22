@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) CBPeripheral *peripheral;
 
+@property (nonatomic, strong) PPBatteryInfoModel *batteryInfo;
 
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral  andDevice:(PPBluetoothAdvDeviceModel *)device;
 

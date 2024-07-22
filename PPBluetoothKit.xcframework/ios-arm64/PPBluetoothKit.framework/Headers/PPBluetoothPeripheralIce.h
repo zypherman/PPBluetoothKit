@@ -44,8 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)discoverFFF0Service;
 
-/// 获取电池电量
-- (void)fetchDeviceBatteryInfo;
+/// 获取电量
+- (void)fetchDeviceBatteryInfoWithCompletion:(void(^)(PPBatteryInfoModel *batteryInfo))completion;
 
 /// 获取历史数据
 /// - Parameter callBack:

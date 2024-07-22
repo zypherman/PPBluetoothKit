@@ -9,6 +9,8 @@
 #import "PPBluetoothAdvDeviceModel.h"
 #import "PPBluetoothScaleBaseModel.h"
 #import "PPBluetooth180ADeviceModel.h"
+#import "PPBatteryInfoModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PPBluetoothAppleDataAnalysis : NSObject
@@ -21,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 历史数据解析
 + (PPBluetoothScaleBaseModel *)analysis18LengthData:(NSData *)receiveDate deviceAdvModel:(PPBluetoothAdvDeviceModel *)device andDevice180AModel:(PPBluetooth180ADeviceModel *)device180A;
 
++ (PPBatteryInfoModel *)analysisStrengthWithData:(NSData *)receiveData;
 
 @end
 
