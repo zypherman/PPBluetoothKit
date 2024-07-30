@@ -1,5 +1,5 @@
 //
-//  PPBluetoothPeripheralBorre.h
+//  PPBluetoothPeripheralDorre.h
 //  PPBluetoothKit
 //
 //  Created by 彭思远 on 2023/4/10.
@@ -7,30 +7,22 @@
 
 #import <Foundation/Foundation.h>
 #import "PPBluetoothDefine.h"
-#import "PPBorreSettingModel.h"
+#import "PPDorreSettingModel.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "PPBluetoothAdvDeviceModel.h"
 #import "PPBluetooth180ADeviceModel.h"
 #import "PPBluetoothInterface.h"
+//#import "PPBluetoothDeviceSettingModel.h"
 #import "PPTorreDFUPackageModel.h"
 #import "PPTorreDFUDataModel.h"
 #import "PPWifiInfoModel.h"
-#import <UIKit/UIKit.h>
 #import <PPBaseKit/PPBaseKit.h>
-#import "PPUserRecentBodyData.h"
-
-
-typedef NS_ENUM(NSUInteger, Borre608LightMode) {
-    Borre608LightModeBreathing = 0,
-    Borre608LightModeAlways = 1,
-    
-};
 
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPBluetoothPeripheralBorre : NSObject
+@interface PPBluetoothPeripheralDorre : NSObject
 
 @property (nonatomic, weak) id<PPBluetoothServiceDelegate> serviceDelegate;
 
@@ -40,11 +32,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) PPBluetoothAdvDeviceModel *deviceAdv;
 
+@property (nonatomic, strong) PPBatteryInfoModel *batteryInfo;
+
 - (instancetype)initWithPeripheral:(CBPeripheral *)peripheral  andDevice:(PPBluetoothAdvDeviceModel *)device;
 
 - (void)discoverDeviceInfoService:(void(^)(PPBluetooth180ADeviceModel *deviceModel))deviceInfoResponseHandler;
 
 - (void)discoverFFF0Service;
+
 
 #pragma mark - code
 
@@ -186,18 +181,21 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - handler: 0设置成功 1设置失败
 - (void)codeSetScreenLuminance:(NSInteger)progress handler:(void(^)(NSInteger status))handler;
 
+- (void)codeSetUserInfoIsEdit:(BOOL)isEdit handler:(void(^)(NSInteger status))handler;
+
+- (void)codeGetUserInfoIsEdithandler:(void(^)(BOOL isEdit))handler;
+
 
 #pragma mark - data
 
 #pragma mark - 用户数据相关
 
 
-
 /// 同步用户列表给设备 - 设备中如果有此用户会更新用户信息，若没有会插入给设备
 /// - Parameters:
 ///   - infos: 用户列表 - 对象中的每个属性都要赋值
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSyncUserList:(NSArray <PPBorreSettingModel *>*)infos withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSyncUserList:(NSArray <PPDorreSettingModel *>*)infos withHandler:(void(^)(NSInteger status))handler;
 
 
 
@@ -205,28 +203,26 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - infos: 单个用户信息 - 对象中的每个属性都要赋值
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSyncUserInfo:(PPBorreSettingModel *)infos withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSyncUserInfo:(PPDorreSettingModel *)infos withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 选中测量用户 -  用于测量过程中指定测量用户，指定后不需要在设备端进行选择
 /// - Parameters:
 ///   - userModel: 单个用户信息 - userId、memberId为必传项
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSelectUser:(PPBorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSelectUser:(PPDorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 删除用户
 /// - Parameters:
 ///   - userModel: 单个用户信息 - userId、memberId为必传项
 ///   - handler:  0设置成功 1设置失败
-- (void)dataDeleteUser:(PPBorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
+- (void)dataDeleteUser:(PPDorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 获取设备端用户列表
 /// - Parameter handler: 返回设备端所有用户的userId
-- (void)dataFetchUserID:(void(^)(NSArray <NSString *>* infos))handler;
-
-
+- (void)dataFetchUserID:(void(^)(NSArray <PPDorreSettingModel *>* infos))handler;
 
 #pragma mark - 配网相关
 
@@ -260,7 +256,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - userMode: 用户对象 userId 为必传项
 ///   - handler: 历史数据结果
-- (void)dataFetchHistoryData:(PPBorreSettingModel *)userMode withHandler:(void(^)(NSArray <PPBluetoothScaleBaseModel *>* history))handler;
+- (void)dataFetchHistoryData:(PPDorreSettingModel *)userMode withHandler:(void(^)(NSArray <PPBluetoothScaleBaseModel *>* history))handler;
 
 #pragma mark - 日志
 
@@ -305,29 +301,31 @@ NS_ASSUME_NONNULL_BEGIN
 ///   - version: 当前DFU文件的云端版本号
 ///   - handler: 成功回调
 - (void)dataDFUSend:(PPTorreDFUPackageModel *)packageModel
-               maxPacketSize:(NSInteger)maxPacketSize
+      maxPacketSize:(NSInteger)maxPacketSize
 transferContinueStatus:(NSInteger)transferContinueStatus
-                mcuVersion:(NSString *)mcuVersion
-          bleVersion:(NSString *)bleVersion
-          wifiVersion:(NSString *)wifiVersion
-        resVersion:(NSString *)resVersion
+      deviceVersion:(NSString *)version
             handler:(void(^)(CGFloat progress, BOOL isSuccess))handler;
 
+/// 启动本地升级
+///  status 0成功  1失败
+- (void)startLocalUpdateWithHandle:(void(^)(NSInteger status))handler;
 
-/// 设置RGB显示模式
-/// - Parameters:
-///   - lightEnable: 灯使能
-///   - lightMode: 灯模式
-///   - normalColorModel:default模式RGB值
-///   - gainColor:增重模式RGB值
-///   - lossColor:减重模式RGB值
-///   - handler: status  0:成功 1:失败
-- (void)setRGBMode:(BOOL)lightEnable lightMode:(Borre608LightMode)lightMode normalColor:(UIColor *)normalColor gainColor:(UIColor *)gainColor lossColor:(UIColor *)lossColor handler:(void(^)(int status))handler;
-/// 查询RGB显示模式
-- (void)getRGBModeHandler:(void(^)(BOOL lightEnable,Borre608LightMode lightMode,NSString *normalColor,NSString *gainColor,NSString *lossColor))handler;
+#pragma mark - 产线 Production line
+/// 打开阻抗测试模式（产线使用）
+/// - Parameter handler: 0设置成功 1设置失败
+- (void)openImpedanceTestMode:(void(^)(NSInteger status))handler;
 
-/// 同步最近7天身体数据
-- (void)syncLast7DaysData608:(NSArray <PPUserRecentBodyData *> *)recentList type:(PPUserBodyDataType)type user:(PPBorreSettingModel *)userModel  handler:(void(^)(int status))handler;
+/// 关闭阻抗测试模式（产线使用）
+/// - Parameter handler: 0设置成功 1设置失败
+- (void)closeImpedanceTestMode:(void(^)(NSInteger status))handler;
+
+/// 获取阻抗测试模式（产线使用）
+/// - Parameter handler: 0打开 1关闭
+- (void)fetchImpedanceTestMode:(void(^)(NSInteger status))handler;
+
+
+/// 获取电量
+- (void)fetchDeviceBatteryInfoWithCompletion:(void(^)(PPBatteryInfoModel *batteryInfo))completion;
 
 @end
 

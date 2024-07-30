@@ -8,18 +8,13 @@
 #import <Foundation/Foundation.h>
 //#import "PPBluetoothDeviceSettingModel.h"
 #import <PPBaseKit/PPBaseKit.h>
-
+#import "PPTorreSettingModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPUserHistoryData : NSObject
 
-@property (nonatomic, assign) CGFloat weightKg;
-@property (nonatomic, assign) double timeStamp;
 
-@end
-
-@interface PPTorreSettingModel : PPBluetoothDeviceSettingModel
+@interface PPDorreSettingModel : PPBluetoothDeviceSettingModel
 
 @property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSString *memberID;
@@ -29,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGFloat currentWeight;
 @property (nonatomic, assign) CGFloat targetWeight;
 @property (nonatomic, assign) CGFloat idealWeight;
+
+
+//local pIndex
+@property (nonatomic, assign) NSInteger PIndex;
 
 
 @property (nonatomic, copy) NSArray <PPUserHistoryData *> *recentData;

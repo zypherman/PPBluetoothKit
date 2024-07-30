@@ -1,17 +1,16 @@
 //
-//  PPBluetoothCMDBorre.h
+//  PPBluetoothCMDDorre.h
 //  PPBluetoothKit
 //
 //  Created by 彭思远 on 2023/4/10.
 //
 
 #import <Foundation/Foundation.h>
-#import "PPBorreSettingModel.h"
-#import "PPUserRecentBodyData.h"
+#import "PPDorreSettingModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPBluetoothCMDBorre : NSObject
+@interface PPBluetoothCMDDorre : NSObject
 
 @property (nonatomic, assign) NSInteger mtu;
 
@@ -24,10 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark - fff2
-
-- (NSArray *)userInfo608:(PPBorreSettingModel *)userModel;
-
-- (NSArray *)userInfo:(PPBorreSettingModel *)userModel;
+- (NSArray *)userInfo:(PPDorreSettingModel *)userModel;
 
 - (NSArray *)memberByUserId:(NSString *)userId memberId:(NSString *)memberId;
 
@@ -39,11 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray *)subCode:(NSString *)str byMtu:(NSInteger)mtu;
 
 + (NSArray *)subData:(NSData *)data byMtu:(NSInteger)mtu;
-
-- (NSString *)colorModeWithLightEnable:(BOOL)lightEnable lightMode:(NSInteger)lightMode normalColor:(UIColor *)normalColor gainColor:(UIColor *)gainColor lossColor:(UIColor *)lossColor;
-
-- (NSArray *)bodyData7Days:(NSArray <PPUserRecentBodyData *> *)recentData type:(PPUserBodyDataType)type user:(PPBorreSettingModel *)userModel;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -29,6 +29,7 @@
 #import "PPBluetoothScaleBaseModel.h"
 //#import "PPBodyFatModel.h"
 #import "PPUnitTool.h"
+#import "PPBluetoothPeripheralDorre.h"
 
 #import <PPBaseKit/PPBaseKit.h>
 

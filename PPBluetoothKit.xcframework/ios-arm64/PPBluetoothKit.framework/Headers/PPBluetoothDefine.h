@@ -50,6 +50,9 @@ typedef NS_ENUM(NSUInteger, PPDeviceProtocolType) {
     PPDeviceProtocolTypeV3, // 3.x版本
     PPDeviceProtocolTypeTorre, // torre版本
     PPDeviceProtocolTypeV4, // 4.x版本
+    PPDeviceProtocolTypeBorre, // Borre版本
+    PPDeviceProtocolTypeDorre, // Dorre版本
+
 };
 
 
@@ -142,7 +145,13 @@ typedef NS_ENUM(NSUInteger, PPDevicePeripheralType) {
     // Jambul 3.x /广播 /人体秤
     PPDevicePeripheralTypePeripheralJambul,
     // 4G LET设备
-    PPDevicePeripheralTypePeripheralKiwifruit
+    PPDevicePeripheralTypePeripheralKiwifruit,
+    
+    //Borre /连接 /人体秤
+    PPDevicePeripheralTypePeripheralBorre,
+    
+    //Dorre /连接 /人体秤
+    PPDevicePeripheralTypePeripheralDorre,
 };
 
 #endif /* PPBluetoothDefine_h */
