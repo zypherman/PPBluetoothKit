@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger rssi;
 @property (nonatomic, assign)NSInteger macAddressStart;
 @property (nonatomic, assign)NSInteger advLength;
+@property (nonatomic, copy) NSString *productModel;
 
 @property (nonatomic, assign) PPDevicePeripheralType PeripheralType;
 

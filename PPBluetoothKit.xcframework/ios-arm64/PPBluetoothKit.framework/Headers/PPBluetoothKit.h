@@ -30,6 +30,7 @@
 //#import "PPBodyFatModel.h"
 #import "PPUnitTool.h"
 #import "PPBluetoothPeripheralDorre.h"
+#import "PPBluetoothPeripheralBorre.h"
 
 #import <PPBaseKit/PPBaseKit.h>
 

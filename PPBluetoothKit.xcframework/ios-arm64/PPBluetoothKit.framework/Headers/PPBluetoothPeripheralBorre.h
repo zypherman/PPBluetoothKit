@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "PPBluetoothDefine.h"
-#import "PPBorreSettingModel.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "PPBluetoothAdvDeviceModel.h"
 #import "PPBluetooth180ADeviceModel.h"
@@ -18,7 +17,8 @@
 #import <UIKit/UIKit.h>
 #import <PPBaseKit/PPBaseKit.h>
 #import "PPUserRecentBodyData.h"
-
+#import "PPTorreSettingModel.h"
+#import "PPTorreSettingModel+Borre.h"
 
 typedef NS_ENUM(NSUInteger, Borre608LightMode) {
     Borre608LightModeBreathing = 0,
@@ -197,7 +197,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - infos: 用户列表 - 对象中的每个属性都要赋值
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSyncUserList:(NSArray <PPBorreSettingModel *>*)infos withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSyncUserList:(NSArray <PPTorreSettingModel *>*)infos withHandler:(void(^)(NSInteger status))handler;
 
 
 
@@ -205,21 +205,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - infos: 单个用户信息 - 对象中的每个属性都要赋值
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSyncUserInfo:(PPBorreSettingModel *)infos withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSyncUserInfo:(PPTorreSettingModel *)infos withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 选中测量用户 -  用于测量过程中指定测量用户，指定后不需要在设备端进行选择
 /// - Parameters:
 ///   - userModel: 单个用户信息 - userId、memberId为必传项
 ///   - handler:  0设置成功 1设置失败
-- (void)dataSelectUser:(PPBorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
+- (void)dataSelectUser:(PPTorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 删除用户
 /// - Parameters:
 ///   - userModel: 单个用户信息 - userId、memberId为必传项
 ///   - handler:  0设置成功 1设置失败
-- (void)dataDeleteUser:(PPBorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
+- (void)dataDeleteUser:(PPTorreSettingModel *)userModel withHandler:(void(^)(NSInteger status))handler;
 
 
 /// 获取设备端用户列表
@@ -260,7 +260,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// - Parameters:
 ///   - userMode: 用户对象 userId 为必传项
 ///   - handler: 历史数据结果
-- (void)dataFetchHistoryData:(PPBorreSettingModel *)userMode withHandler:(void(^)(NSArray <PPBluetoothScaleBaseModel *>* history))handler;
+- (void)dataFetchHistoryData:(PPTorreSettingModel *)userMode withHandler:(void(^)(NSArray <PPBluetoothScaleBaseModel *>* history))handler;
 
 #pragma mark - 日志
 
@@ -322,12 +322,12 @@ transferContinueStatus:(NSInteger)transferContinueStatus
 ///   - gainColor:增重模式RGB值
 ///   - lossColor:减重模式RGB值
 ///   - handler: status  0:成功 1:失败
-- (void)setRGBMode:(BOOL)lightEnable lightMode:(Borre608LightMode)lightMode normalColor:(UIColor *)normalColor gainColor:(UIColor *)gainColor lossColor:(UIColor *)lossColor handler:(void(^)(int status))handler;
+- (void)setRGBMode:(BOOL)lightEnable lightMode:(Borre608LightMode)lightMode normalColor:(NSString *)normalColor gainColor:(NSString *)gainColor lossColor:(NSString *)lossColor handler:(void(^)(int status))handler;
 /// 查询RGB显示模式
 - (void)getRGBModeHandler:(void(^)(BOOL lightEnable,Borre608LightMode lightMode,NSString *normalColor,NSString *gainColor,NSString *lossColor))handler;
 
 /// 同步最近7天身体数据
-- (void)syncLast7DaysData608:(NSArray <PPUserRecentBodyData *> *)recentList type:(PPUserBodyDataType)type user:(PPBorreSettingModel *)userModel  handler:(void(^)(int status))handler;
+- (void)syncLast7DaysData608:(NSArray <PPUserRecentBodyData *> *)recentList type:(PPUserBodyDataType)type user:(PPTorreSettingModel *)userModel  handler:(void(^)(int status))handler;
 
 @end
 

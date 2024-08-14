@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPBorreSettingModel.h"
+#import "PPTorreSettingModel+Borre.h"
 #import "PPUserRecentBodyData.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -25,9 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - fff2
 
-- (NSArray *)userInfo608:(PPBorreSettingModel *)userModel;
+- (NSArray *)userInfo608:(PPTorreSettingModel *)userModel;
 
-- (NSArray *)userInfo:(PPBorreSettingModel *)userModel;
+- (NSArray *)userInfo:(PPTorreSettingModel *)userModel;
 
 - (NSArray *)memberByUserId:(NSString *)userId memberId:(NSString *)memberId;
 
@@ -40,9 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray *)subData:(NSData *)data byMtu:(NSInteger)mtu;
 
-- (NSString *)colorModeWithLightEnable:(BOOL)lightEnable lightMode:(NSInteger)lightMode normalColor:(UIColor *)normalColor gainColor:(UIColor *)gainColor lossColor:(UIColor *)lossColor;
+- (NSString *)colorModeWithLightEnable:(BOOL)lightEnable lightMode:(NSInteger)lightMode normalColor:(NSString *)normalColor gainColor:(NSString *)gainColor lossColor:(NSString *)lossColor;
 
-- (NSArray *)bodyData7Days:(NSArray <PPUserRecentBodyData *> *)recentData type:(PPUserBodyDataType)type user:(PPBorreSettingModel *)userModel;
+- (NSArray *)bodyData7Days:(NSArray <PPUserRecentBodyData *> *)recentData type:(PPUserBodyDataType)type user:(PPTorreSettingModel *)userModel;
 
 @end
 
